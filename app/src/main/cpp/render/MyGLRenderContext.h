@@ -12,8 +12,12 @@
 class MyGLRenderContext {
 
     MyGLRenderContext();
+
     ~MyGLRenderContext();
+
 public:
+    void SetParamsInt(int paramType, int value0, int value1);
+
     void SetImageData(int format, int width, int height, uint8_t *pData);
 
     void OnSurfaceCreated();

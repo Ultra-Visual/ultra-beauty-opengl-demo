@@ -86,3 +86,15 @@ MyGLRenderContext::MyGLRenderContext() {
     m_pCurSample = new TriangleSample();
     m_pBeforeSample = nullptr;
 }
+
+void MyGLRenderContext::SetParamsInt(int paramType, int value0, int value1) {
+    m_pBeforeSample = m_pCurSample;
+    switch (value0) {
+        case 0:
+            m_pCurSample = new TriangleSample();
+            break;
+        default:
+            m_pCurSample = nullptr;
+            break;
+    }
+}
