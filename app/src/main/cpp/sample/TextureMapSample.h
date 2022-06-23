@@ -1,0 +1,28 @@
+//
+// Created by w.feng on 2022/6/22.
+//
+
+#ifndef ULTRABEAUTY_TEXTUREMAPSAMPLE_H
+#define ULTRABEAUTY_TEXTUREMAPSAMPLE_H
+
+#include "GLSampleBase.h"
+#include "../util/ImageDef.h"
+
+class TextureMapSample : public GLSampleBase {
+public:
+    TextureMapSample();
+    virtual ~TextureMapSample();
+    void LoadImage(NativeImage *pImage);
+    virtual void Init();
+    virtual void Draw(int screenW, int screenH);
+
+    virtual void Destroy();
+
+private:
+    GLuint m_TextureId;
+    GLint m_SamplerLoc;
+    NativeImage m_RenderImage;
+};
+
+
+#endif //ULTRABEAUTY_TEXTUREMAPSAMPLE_H

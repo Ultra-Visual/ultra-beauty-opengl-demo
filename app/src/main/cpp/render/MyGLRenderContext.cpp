@@ -2,9 +2,12 @@
 // Created by fengwei on 2022/4/29.
 //
 
+#include <LogUtil.h>
 #include "MyGLRenderContext.h"
 #include "ImageDef.h"
 #include "../sample/TriangleSample.h"
+#include "../sample/TextureMapSample.h"
+#include "../sample/NV21TextureMapSample.h"
 
 MyGLRenderContext *MyGLRenderContext::m_pContext = nullptr;
 
@@ -89,9 +92,16 @@ MyGLRenderContext::MyGLRenderContext() {
 
 void MyGLRenderContext::SetParamsInt(int paramType, int value0, int value1) {
     m_pBeforeSample = m_pCurSample;
+    LOGD("value:%d", value0);
     switch (value0) {
         case 0:
             m_pCurSample = new TriangleSample();
+            break;
+        case 1:
+            m_pCurSample = new TextureMapSample();
+            break;
+        case 2:
+            m_pCurSample = new NV21TextureMapSample();
             break;
         default:
             m_pCurSample = nullptr;

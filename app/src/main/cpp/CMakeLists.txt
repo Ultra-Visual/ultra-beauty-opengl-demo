@@ -15,7 +15,6 @@ include_directories(
         util
 )
 get_property(dirs DIRECTORY ${CMAKE_SOURCE_DIR} PROPERTY INCLUDE_DIRECTORIES)
-message(">>> include_dirs=${dirs}")
 
 # Creates and names a library, sets it as either STATIC
 # or SHARED, and provides the relative paths to its source code.
@@ -29,6 +28,7 @@ file(GLOB src-files
         ${CMAKE_SOURCE_DIR}/sample/*.cpp
         )
 
+message(">>> include_dirs=${src-files}")
 add_library( # Sets the name of the library.
         native-render
 
